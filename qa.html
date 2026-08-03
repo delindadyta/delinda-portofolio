@@ -152,6 +152,37 @@
     font-size:13px; color:var(--muted-2); font-weight:300; font-style:italic;
     border-left:2px solid var(--accent); padding-left:14px; margin-top:8px;
   }
+  /* --- Timeline pengalaman kerja --- */
+  .timeline{ position:relative; padding-left:36px; }
+  .timeline::before{
+    content:''; position:absolute; left:9px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(var(--accent), transparent 92%); opacity:0.5;
+  }
+  .timeline-item{ position:relative; padding-bottom:22px; }
+  .timeline-item:last-child{ padding-bottom:0; }
+  .timeline-dot{
+    position:absolute; left:-36px; top:6px; width:20px; height:20px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--accent); display:flex; align-items:center;
+    justify-content:center; font-size:10px; z-index:1;
+  }
+  .timeline-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    padding:16px 20px; backdrop-filter:blur(8px);
+    display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  }
+  .timeline-company{ font-weight:700; font-size:16px; color:var(--accent); }
+  .timeline-role{ font-weight:500; font-size:14px; color:var(--text); margin-top:2px; }
+  .timeline-meta{ font-size:12.5px; color:var(--muted-1); font-weight:300; white-space:nowrap; }
+
+  .timeline-dot.highlight{ background:var(--accent); border-color:var(--accent); width:24px; height:24px; left:-38px; box-shadow:0 0 0 6px var(--accent-dim); }
+  .timeline-card.highlight{
+    background:var(--accent-dim); border:1px solid var(--accent);
+    box-shadow:0 8px 24px -12px rgba(185,170,255,0.45);
+  }
+  .timeline-badge{
+    font-size:11px; font-weight:700; color:var(--accent); background:rgba(255,255,255,0.08);
+    padding:4px 10px; border-radius:99px; margin-left:8px; vertical-align:middle;
+  }
 </style>
 </head>
 <body>
@@ -181,205 +212,127 @@
     <h1 class="name">Delinda Dyta Puspitasari</h1>
     <div class="role">Lead Software QA Engineer</div>
     <p class="hero-desc">
-      <b>8+ tahun</b> memastikan software benar-benar bekerja seperti yang dijanjikan — mulai dari manual testing, menyusun test plan, sampai kerja bareng developer & product manager biar bug ketangkap sebelum sampai ke user.
+  I help teams deliver reliable software through structured testing, quality validation, and collaboration across business, product, and engineering teams.
     </p>
 
     <div class="stat-strip reveal">
-      <div class="stat-cell"><span class="num">7</span><span class="lbl">Perusahaan</span></div>
-      <div class="stat-cell"><span class="num">30+</span><span class="lbl">Proyek diuji</span></div>
-      <div class="stat-cell"><span class="num">10+</span><span class="lbl">Tahun industri</span></div>
-      <div class="stat-cell"><span class="num">2</span><span class="lbl">Bahasa</span></div>
+      <!-- <div class="stat-cell"><span class="num">7</span><span class="lbl">Perusahaan</span></div> -->
+      <div class="stat-cell"><span class="num">30+</span><span class="lbl">System Tested</span></div>
+      <div class="stat-cell"><span class="num">4+</span><span class="lbl">Years QA Experience</span></div>
+      <!-- <div class="stat-cell"><span class="num">2</span><span class="lbl">Bahasa</span></div> -->
     </div>
 
     <div class="cta-row">
-      <a class="btn primary" href="mailto:jeungdelin@gmail.com">Kirim Email →</a>
+      <a class="btn primary" href="mailto:jeungdelin@gmail.com">Send Email →</a>
       <a class="btn ghost" href="https://www.linkedin.com/in/delinda-dyta-puspitasari-1281609a/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn ghost" href="tel:+6281935045410">+62 819-3504-5410</a>
+      <a class="btn ghost" href="http://wa.me/+6281935045410">+62 819-3504-5410</a>
     </div>
   </section>
 
   <section id="about" style="padding-top:0; border-top:none;">
     <div class="strength-card reveal">
       <ul class="strength-list">
-        <li>Embraces teamwork</li>
-        <li>Bisa kerja tim maupun mandiri</li>
-        <li>Komunikasi verbal & tulisan yang baik</li>
-        <li>Menerjemahkan alur bisnis ke alur aplikasi</li>
-        <li>Cepat belajar tech stack baru</li>
+        <li>Quality-Focused Mindset</li>
+        <li>Test Documentation</li>
+        <li>Defect Analysis & Tracking</li>
+        <li>Fast Learner</li>
+        <!-- <li>Cepat belajar tech stack baru</li> -->
       </ul>
     </div>
   </section>
 
   <section id="pengalaman">
-    <div class="sec-title">Pengalaman Kerja</div>
+    <div class="sec-title">Professional Experience</div>
 
-    <div class="job reveal open" data-job>
-      <div class="job-head" data-toggle>
-        <div class="job-icon">🧪</div>
-        <div class="job-main">
-          <div class="job-title"><span class="job-company">MSGlow</span> · Lead Software QA Engineer</div>
-          <span class="job-period">Malang · Feb 2022 – Sekarang</span>
-        </div>
-        <span class="job-chevron">⌄</span>
-      </div>
-      <div class="job-body">
-        <div class="job-body-inner">
-          <ul class="job-list">
-            <li>Manual testing: SIT, UAT, Regression, Compatibility & Performance Testing</li>
-            <li>Membuat Test Scenario Document untuk setiap fitur</li>
-            <li>Menyusun Test Plan & timeline bersama Project Manager</li>
-            <li>Mendukung Project Manager & Developer selama fase testing</li>
-            <li>Melaporkan & koordinasi lintas tim untuk setiap isu/defect</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">CRM System</span><span class="tag">ERP System</span><span class="tag">HRIS</span>
-            <span class="tag">MSLearning & Grow</span><span class="tag">Warehouse Management</span>
-            <span class="tag">POS End User</span><span class="tag">Seller Transactions</span>
+    <div class="timeline reveal">
+
+      <div class="timeline-item">
+        <div class="timeline-dot highlight">🧪</div>
+        <div class="timeline-card highlight">
+          <div>
+            <div class="timeline-company">MSGlow (PT. Kosmetika Cantik Indonesia)</div>
+            <div class="timeline-role">Lead Software QA Engineer<span class="timeline-badge">★</span></div>
           </div>
+          <div class="timeline-meta">Malang · Feb 2022 – Sekarang</div>
         </div>
       </div>
-    </div>
 
-    <div class="job reveal" data-job>
-      <div class="job-head" data-toggle>
-        <div class="job-icon">📦</div>
-        <div class="job-main">
-          <div class="job-title"><span class="job-company">McEasy</span> · Product Manager</div>
-          <span class="job-period">Surabaya · Des 2021 – Feb 2022</span>
-        </div>
-        <span class="job-chevron">⌄</span>
-      </div>
-      <div class="job-body">
-        <div class="job-body-inner">
-          <ul class="job-list">
-            <li>Menggali ide produk untuk Transportation Management System & Vehicle Smart Management System</li>
-            <li>Berkolaborasi dengan tim engineer untuk menyempurnakan sistem & memperbaiki bug</li>
-            <li>Menganalisis desain produk baru melalui FSD dan Wireframe</li>
-            <li>Menyusun & menyelaraskan timeline pengembangan produk baru</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="job reveal" data-job>
-      <div class="job-head" data-toggle>
-        <div class="job-icon">📊</div>
-        <div class="job-main">
-          <div class="job-title"><span class="job-company">Kano Solution</span> · Business Analyst</div>
-          <span class="job-period">Surabaya · Sep 2019 – Nov 2021</span>
-        </div>
-        <span class="job-chevron">⌄</span>
-      </div>
-      <div class="job-body">
-        <div class="job-body-inner">
-          <ul class="job-list">
-            <li>Menggali kebutuhan software & business rules bersama klien</li>
-            <li>Analisis kebutuhan bisnis lewat document analysis, workshop & workflow analysis</li>
-            <li>Testing SIT, UAT, dan performance untuk memastikan kebutuhan klien terpenuhi</li>
-            <li>Membuat design mockup berdasarkan requirement</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">HM Sampoerna</span><span class="tag">Pelindo 3</span>
-            <span class="tag">Petrosea</span><span class="tag">Terminal Petikemas Surabaya</span>
-            <span class="tag">Terminal Teluk Lamong</span>
+      <div class="timeline-item">
+        <div class="timeline-dot">📦</div>
+        <div class="timeline-card">
+          <div>
+            <div class="timeline-company">McEasy (PT. Otto Menara Globalindo)</div>
+            <div class="timeline-role">Product Manager</div>
           </div>
+          <div class="timeline-meta">Surabaya · Des 2021 – Feb 2022</div>
         </div>
       </div>
-    </div>
 
-    <div class="job reveal" data-job>
-      <div class="job-head" data-toggle>
-        <div class="job-icon">💻</div>
-        <div class="job-main">
-          <div class="job-title"><span class="job-company">EACIIT Vyasa Pte Ltd</span> · Software Engineer</div>
-          <span class="job-period">Surabaya · Apr 2017 – Apr 2020</span>
-        </div>
-        <span class="job-chevron">⌄</span>
-      </div>
-      <div class="job-body">
-        <div class="job-body-inner">
-          <ul class="job-list">
-            <li>Backend engineer aplikasi Standard Chartered Bank pakai Golang dan MongoDB</li>
-            <li>Developer testing sebelum push ke Git, lalu deployment saat siap rilis</li>
-            <li>Membuat Mongo Script untuk integrasi data antar-database</li>
-            <li>Code review untuk menjaga kualitas kode tim</li>
-            <li>Pakai JIRA untuk metode Agile development</li>
-          </ul>
-          <div class="tags"><span class="tag">BEF</span><span class="tag">Periscope</span></div>
+      <div class="timeline-item">
+        <div class="timeline-dot">📊</div>
+        <div class="timeline-card">
+          <div>
+            <div class="timeline-company">PT Kano Teknologi Utama</div>
+            <div class="timeline-role">Business Analyst</div>
+          </div>
+          <div class="timeline-meta">Surabaya · Sep 2019 – Nov 2021</div>
         </div>
       </div>
-    </div>
 
-    <div class="job reveal" data-job>
-      <div class="job-head" data-toggle>
-        <div class="job-icon">🗂️</div>
-        <div class="job-main">
-          <div class="job-title"><span class="job-company">Dattabot – Mediatrac</span> · Data Engineer</div>
-          <span class="job-period">Jakarta · Okt 2016 – Mar 2017</span>
-        </div>
-        <span class="job-chevron">⌄</span>
-      </div>
-      <div class="job-body">
-        <div class="job-body-inner">
-          <ul class="job-list">
-            <li>Merancang sistem analisis Big Data untuk proyek sektor kesehatan Bojonegoro</li>
-            <li>Mapping & cleansing data media sosial pakai Shell script dan Python</li>
-            <li>Migrasi data dari RDBMS ke Hadoop pakai StreamSets dan Sqoop</li>
-          </ul>
+      <div class="timeline-item">
+        <div class="timeline-dot">💻</div>
+        <div class="timeline-card">
+          <div>
+            <div class="timeline-company">EACIIT Vyasa Pte Ltd</div>
+            <div class="timeline-role">Software Engineer</div>
+          </div>
+          <div class="timeline-meta">Surabaya · Apr 2017 – Apr 2020</div>
         </div>
       </div>
-    </div>
 
-    <div class="job reveal" data-job>
-      <div class="job-head" data-toggle>
-        <div class="job-icon">🧾</div>
-        <div class="job-main">
-          <div class="job-title"><span class="job-company">PT Indosat Ooredoo</span> · IT Billing Printing</div>
-          <span class="job-period">Jakarta · Agu 2015 – Okt 2016</span>
-        </div>
-        <span class="job-chevron">⌄</span>
-      </div>
-      <div class="job-body">
-        <div class="job-body-inner">
-          <ul class="job-list">
-            <li>Mengembangkan aplikasi web full-stack (PHP, Tableau, PostgreSQL)</li>
-            <li>Memelihara Linux Server untuk memproses billing statement pelanggan</li>
-            <li>Menganalisis & menyelesaikan komplain billing dari pengguna</li>
-          </ul>
+      <div class="timeline-item">
+        <div class="timeline-dot">🗂️</div>
+        <div class="timeline-card">
+          <div>
+            <div class="timeline-company">Dattabot – Mediatrac</div>
+            <div class="timeline-role">Data Engineer</div>
+          </div>
+          <div class="timeline-meta">Jakarta · Okt 2016 – Mar 2017</div>
         </div>
       </div>
-    </div>
 
-    <div class="job reveal" data-job>
-      <div class="job-head" data-toggle>
-        <div class="job-icon">🛠️</div>
-        <div class="job-main">
-          <div class="job-title"><span class="job-company">PT Dua Empat Tujuh</span> · IT Support Consultant</div>
-          <span class="job-period">Jakarta · Jun 2014 – Jul 2015</span>
+      <!-- <div class="timeline-item">
+        <div class="timeline-dot">🧾</div>
+        <div class="timeline-card">
+          <div>
+            <div class="timeline-company">PT Indosat Ooredoo</div>
+            <div class="timeline-role">IT Billing Printing</div>
+          </div>
+          <div class="timeline-meta">Jakarta · Agu 2015 – Okt 2016</div>
         </div>
-        <span class="job-chevron">⌄</span>
-      </div>
-      <div class="job-body">
-        <div class="job-body-inner">
-          <ul class="job-list">
-            <li>Troubleshooting & bug fixing aplikasi CRM Telkomsel</li>
-            <li>Monitoring & membuat crontab untuk kebutuhan pelaporan</li>
-            <li>Shell scripting & monitoring performa server di Unix</li>
-          </ul>
+      </div> -->
+
+      <!-- <div class="timeline-item">
+        <div class="timeline-dot">🛠️</div>
+        <div class="timeline-card">
+          <div>
+            <div class="timeline-company">PT Dua Empat Tujuh</div>
+            <div class="timeline-role">IT Support Consultant</div>
+          </div>
+          <div class="timeline-meta">Jakarta · Jun 2014 – Jul 2015</div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
   <section id="portofolio">
-    <div class="sec-title">Contoh Alur & Dokumentasi Testing</div>
-    <p class="hero-desc" style="margin-bottom:26px; font-size:14.5px;">
-      Detail proyek asli bersifat rahasia perusahaan, jadi contoh di bawah pakai format & alur kerja yang sama seperti yang saya terapkan sehari-hari, dengan data ilustratif.
-    </p>
+    <div class="sec-title">Systems & Platforms</div>
+    <!-- <p class="hero-desc" style="margin-bottom:26px; font-size:14.5px;">
+Project details are confidential. The examples below represent my testing approach using illustrative data while following the same workflow applied in real projects.    </p> -->
 
-    <div class="flow-wrap reveal">
+    <!-- <div class="flow-wrap reveal">
       <div class="flow">
-        <div class="flow-step"><span class="n">01</span><span class="t">Requirement Review</span></div>
+        <div class="flow-step"><span class="n">01</span><span class="t">Requirement Analysis</span></div>
         <div class="flow-connector">→</div>
         <div class="flow-step"><span class="n">02</span><span class="t">Test Planning</span></div>
         <div class="flow-connector">→</div>
@@ -387,54 +340,44 @@
         <div class="flow-connector">→</div>
         <div class="flow-step"><span class="n">04</span><span class="t">Test Execution</span></div>
         <div class="flow-connector">→</div>
-        <div class="flow-step"><span class="n">05</span><span class="t">Bug Reporting</span></div>
+        <div class="flow-step"><span class="n">05</span><span class="t">Defect Reporting</span></div>
         <div class="flow-connector">→</div>
         <div class="flow-step"><span class="n">06</span><span class="t">Regression & Sign-off</span></div>
       </div>
+    </div> -->
+
+    <div class="proj-card reveal">
+      <div class="proj-head">
+        <div class="proj-icon">🏢</div>
+        <div>
+          <div class="proj-title">Enterprise Systems</div>        </div>
+      </div>
+      <table class="mini-table">
+        <!-- <thead><tr><th>No</th><th>Skenario</th><th>Hasil Diharapkan</th><th>Status</th></tr></thead> -->
+        <tbody>
+          <tr><td>CRM</td>
+          <tr><td>ERP</td>
+          <tr><td>HRIS</td>
+          <tr><td>WMS</td>
+        </tbody>
+      </table>
     </div>
 
     <div class="proj-card reveal">
       <div class="proj-head">
         <div class="proj-icon">🛒</div>
         <div>
-          <div class="proj-title">POS End User Platform</div>
-          <div class="proj-sub">Regression & Compatibility Testing</div>
-        </div>
+          <div class="proj-title">Sales & Commerce</div>        </div>
       </div>
-      <p class="proj-desc">
-        Menguji alur transaksi POS dari sisi kasir — mulai dari login, input barang, diskon, sampai proses pembayaran — di beberapa device & browser sebelum rilis ke seller.
-      </p>
       <table class="mini-table">
-        <thead><tr><th>No</th><th>Skenario</th><th>Hasil Diharapkan</th><th>Status</th></tr></thead>
+        <!-- <thead><tr><th>No</th><th>Skenario</th><th>Hasil Diharapkan</th><th>Status</th></tr></thead> -->
         <tbody>
-          <tr><td>TC-01</td><td>Login kasir dengan kredensial valid</td><td>Masuk ke halaman kasir</td><td><span class="status-pass">Pass</span></td></tr>
-          <tr><td>TC-02</td><td>Tambah item & terapkan diskon voucher</td><td>Total harga terhitung otomatis</td><td><span class="status-pass">Pass</span></td></tr>
-          <tr><td>TC-03</td><td>Bayar dengan metode QRIS</td><td>Struk tercetak, stok berkurang</td><td><span class="status-pass">Pass</span></td></tr>
+          <tr><td>Sellershop</td>
+          <tr><td>POS End User</td>
+          <tr><td>Seller Registration</td>
+          <tr><td>Product Retur</td>
         </tbody>
       </table>
-      <div class="note-box">Testing dilakukan di 3 browser & 2 ukuran layar berbeda untuk memastikan konsistensi tampilan.</div>
-    </div>
-
-    <div class="proj-card reveal">
-      <div class="proj-head">
-        <div class="proj-icon">📦</div>
-        <div>
-          <div class="proj-title">Warehouse Management System</div>
-          <div class="proj-sub">System Integration Testing (SIT)</div>
-        </div>
-      </div>
-      <p class="proj-desc">
-        Memvalidasi alur stok masuk-keluar antar-gudang, termasuk sinkronisasi data ke sistem lain (ERP) agar jumlah stok selalu akurat real-time.
-      </p>
-      <table class="mini-table">
-        <thead><tr><th>No</th><th>Skenario</th><th>Hasil Diharapkan</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>TC-01</td><td>Input barang masuk ke gudang A</td><td>Stok gudang A bertambah</td><td><span class="status-pass">Pass</span></td></tr>
-          <tr><td>TC-02</td><td>Transfer stok gudang A → gudang B</td><td>Stok A berkurang, B bertambah</td><td><span class="status-pass">Pass</span></td></tr>
-          <tr><td>TC-03</td><td>Sinkronisasi data stok ke ERP</td><td>Data ERP sesuai data WMS</td><td><span class="status-pass">Pass</span></td></tr>
-        </tbody>
-      </table>
-      <div class="note-box">Ditemukan & dilaporkan defect delay sinkronisasi saat transfer stok bersamaan; diperbaiki sebelum rilis.</div>
     </div>
 
     <div class="proj-card reveal">
