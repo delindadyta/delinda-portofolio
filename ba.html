@@ -17,8 +17,8 @@
     --text:#ffffff;
     --muted:#c9c3e0;
     --muted-2:#8f87b0;
-    --accent:#b9aaff;
-    --accent-dim:rgba(185,170,255,0.16);
+    --accent:#ffb27a;
+    --accent-dim:rgba(255,178,122,0.16);
     --font:'Poppins', sans-serif;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -92,7 +92,7 @@
   .skill-row{ display:grid; grid-template-columns:150px 1fr 40px; align-items:center; gap:12px; margin-bottom:11px; }
   .skill-name{ font-size:14px; font-weight:400; }
   .skill-track{ height:8px; border-radius:99px; background:rgba(255,255,255,0.08); overflow:hidden; }
-  .skill-fill{ height:100%; border-radius:99px; background:linear-gradient(90deg, var(--accent), #e0d9ff); }
+  .skill-fill{ height:100%; border-radius:99px; background:linear-gradient(90deg, var(--accent), #ffe0b2); }
   .skill-pct{ font-size:12.5px; color:var(--muted-2); text-align:right; font-weight:400; }
   @media (max-width:560px){ .skill-row{ grid-template-columns:100px 1fr 32px; gap:8px; } .skill-name{ font-size:12.5px; } }
 
@@ -113,7 +113,7 @@
   .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.visible{ opacity:1; transform:none; }
 
-  /* --- Work flow --- */
+  /* --- Testing flow --- */
   .flow-wrap{ overflow-x:auto; padding:4px 2px 18px; margin-bottom:8px; }
   .flow{ display:flex; align-items:stretch; min-width:680px; gap:0; }
   .flow-step{
@@ -138,25 +138,104 @@
   .proj-sub{ font-size:13px; color:var(--muted-2); font-weight:300; margin-top:2px; }
   .proj-desc{ font-size:14.5px; color:var(--muted); font-weight:300; margin-bottom:16px; line-height:1.6; }
 
-  .role-box{
-    background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:12px;
-    padding:14px 16px; margin-bottom:16px;
+  .mini-table{ width:100%; border-collapse:collapse; font-size:13px; margin-bottom:14px; }
+  .mini-table th{
+    text-align:left; font-weight:600; font-size:11.5px; color:var(--muted-2);
+    text-transform:uppercase; letter-spacing:.03em; padding:8px 10px; border-bottom:1px solid var(--border);
   }
-  .role-box .role-lbl{ font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px; }
-  .role-box .role-val{ font-size:14px; font-weight:500; }
-
-  .proj-list{ list-style:none; margin-bottom:16px; }
-  .proj-list li{ position:relative; padding:5px 0 5px 18px; font-size:14.5px; font-weight:300; color:var(--muted); }
-  .proj-list li::before{ content:'•'; position:absolute; left:0; color:var(--accent); font-weight:700; }
-
-  .deliv-tags{ display:flex; flex-wrap:wrap; gap:7px; }
-  .deliv-tag{ font-size:12px; font-weight:500; color:var(--accent); background:var(--accent-dim); padding:5px 12px; border-radius:99px; }
+  .mini-table td{ padding:10px; border-bottom:1px solid rgba(255,255,255,0.06); color:var(--muted); font-weight:300; vertical-align:top; }
+  .mini-table td:first-child{ color:var(--text); font-weight:500; width:34px; }
+  .status-pass{ display:inline-flex; font-size:11px; font-weight:600; color:#7ee0b0; background:rgba(126,224,176,0.14); padding:3px 10px; border-radius:99px; }
+  @media (max-width:600px){ .mini-table{ font-size:12px; } .mini-table th:nth-child(2), .mini-table td:nth-child(2){ display:none; } }
 
   .note-box{
     font-size:13px; color:var(--muted-2); font-weight:300; font-style:italic;
     border-left:2px solid var(--accent); padding-left:14px; margin-top:8px;
   }
 
+  /* --- Systems & Platforms classification grid --- */
+  .sys-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:680px){ .sys-grid{ grid-template-columns:1fr; } }
+  .sys-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    padding:24px; backdrop-filter:blur(8px); transition:border-color .25s ease, transform .25s ease;
+  }
+  .sys-card:hover{ border-color:var(--accent); transform:translateY(-3px); }
+  .sys-card-head{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .sys-icon{
+    width:42px; height:42px; border-radius:12px; background:var(--accent-dim); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0;
+  }
+  .sys-title{ font-weight:700; font-size:16px; }
+  .sys-items{ list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .sys-items li{
+    font-size:13.5px; font-weight:400; color:var(--muted); padding:9px 12px;
+    background:rgba(255,255,255,0.04); border-radius:10px; border:1px solid rgba(255,255,255,0.05);
+  }
+
+  /* --- Skills & Technologies (tag groups) --- */
+  .tech-group{ margin-bottom:24px; }
+  .tech-group-head{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .tech-icon{
+    width:36px; height:36px; border-radius:10px; background:var(--accent-dim); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;
+  }
+  .tech-group h3{ font-weight:700; font-size:15px; }
+  .tech-tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tech-tag{
+    font-size:13px; font-weight:500; color:var(--text); background:rgba(255,255,255,0.05);
+    border:1px solid var(--border); padding:7px 14px; border-radius:99px;
+  }
+
+  /* --- Testing Expertise (checklist chips) --- */
+  .expertise-grid{ display:flex; flex-wrap:wrap; gap:10px; }
+  .expertise-item{
+    display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:500;
+    background:var(--surface); border:1px solid var(--border); padding:10px 16px; border-radius:14px;
+    backdrop-filter:blur(8px);
+  }
+  .expertise-item .check{ color:var(--accent); font-weight:800; }
+
+  /* --- QA Deliverables --- */
+  .deliv-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:680px){ .deliv-grid{ grid-template-columns:1fr; } }
+  .deliv-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    padding:24px; backdrop-filter:blur(8px); transition:border-color .25s ease, transform .25s ease;
+  }
+  .deliv-card:hover{ border-color:var(--accent); transform:translateY(-3px); }
+  .deliv-card-head{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .deliv-title{ font-weight:700; font-size:15.5px; }
+  .deliv-desc{ font-size:13.5px; color:var(--muted); font-weight:300; line-height:1.6; }
+
+  /* --- Featured QA Projects --- */
+  .proj-card2{
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    padding:28px; margin-bottom:18px; backdrop-filter:blur(8px);
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .proj-card2:hover{ border-color:var(--accent); transform:translateY(-3px); }
+  .proj-card2 .p2-head{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+  .proj-card2 .p2-icon{
+    width:44px; height:44px; border-radius:12px; background:var(--accent-dim); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0;
+  }
+  .proj-card2 .p2-title{ font-weight:700; font-size:17px; }
+  .meta-grid{ display:flex; flex-direction:column; margin-bottom:6px; }
+  .meta-row{
+    display:flex; gap:16px; align-items:baseline; padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.07); flex-wrap:wrap;
+  }
+  .meta-row:last-child{ border-bottom:none; }
+  .meta-label{
+    flex:0 0 130px; font-size:11px; font-weight:700; color:var(--accent);
+    text-transform:uppercase; letter-spacing:.05em;
+  }
+  .meta-value{ font-size:14px; color:var(--text); font-weight:400; flex:1 1 200px; }
+  .highlights-title{ font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin:16px 0 8px; }
+  .highlights-list{ list-style:none; }
+  .highlights-list li{ position:relative; padding:5px 0 5px 18px; font-size:14px; font-weight:300; color:var(--muted); line-height:1.55; }
+  .highlights-list li::before{ content:'•'; position:absolute; left:0; color:var(--accent); font-weight:700; }
   /* --- Timeline pengalaman kerja --- */
   .timeline{ position:relative; padding-left:36px; }
   .timeline::before{
@@ -329,6 +408,49 @@
     </div>
   </section>
 
+    <section id="portofolio">
+    <div class="sec-title">Systems & Platforms</div>
+
+    <div class="sys-grid">
+      <div class="sys-card reveal">
+        <div class="sys-card-head">
+          <div class="sys-icon">🧩</div>
+          <div class="sys-title">Enterprise Systems</div>
+        </div>
+        <ul class="sys-items">
+          <li>OHS System</li>
+          <li>Fleet Management</li>
+          <li>Risk Management</li>
+          <li>Sales Finance Area</li>
+        </ul>
+      </div>
+
+      <div class="sys-card reveal">
+        <div class="sys-card-head">
+          <div class="sys-icon">🔄</div>
+          <div class="sys-title">Operation & Workforce</div>
+        </div>
+        <ul class="sys-items">
+          <li>Mine Apps</li>
+          <li>Employee Self Service</li>
+          <li>HR Attendance Approval</li>
+        </ul>
+      </div>
+
+      <div class="sys-card reveal">
+        <div class="sys-card-head">
+          <div class="sys-icon">📈</div>
+          <div class="sys-title">Business Intelligence</div>
+        </div>
+        <ul class="sys-items">
+          <li>Financial Reporting</li>
+          <li>Transport Visualization Dashboard</li>
+          <li>Mining Dashboard</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="proyek">
     <div class="sec-title">Featured Projects</div>
     <p class="hero-desc" style="margin-bottom:26px; font-size:14.5px;">
@@ -444,35 +566,84 @@ A selection of projects showcasing my role, deliverables, and business impact as
     </div>
   </section>
 
-  <section id="keahlian">
-    <div class="sec-title">Keahlian</div>
+  <section id="business-analysis">
+    <div class="sec-title">Business Analysis</div>
 
-    <div class="skill-group reveal">
-      <h3>Analisis & Proses</h3>
-      <div class="skill-row"><span class="skill-name">Data Analysis</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">Requirement Analysis</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">Agile & Project Mgmt</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">Dokumentasi</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
+    <div class="tech-group reveal">
+      <div class="tech-group-head">
+        <div class="tech-icon">🧩</div>
+        <h3>Analysis</h3>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">Requirement Gathering</span>
+        <span class="tech-tag">Requirement Analysis</span>
+        <span class="tech-tag">Business Process Analysis</span>
+        <span class="tech-tag">Functional Requirements</span>
+        <span class="tech-tag">Gap Analysis</span>
+        <span class="tech-tag">User Story</span>
+        <span class="tech-tag">Acceptance Criteria</span>
+        <span class="tech-tag">Process Improvement</span>
+      </div>
     </div>
 
-    <div class="skill-group reveal">
-      <h3>Database</h3>
-      <div class="skill-row"><span class="skill-name">SQL Database</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">MongoDB</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">PostgreSQL</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
+    <div class="tech-group reveal">
+      <div class="tech-group-head">
+        <div class="tech-icon">📊</div>
+        <h3>Data & BI</h3>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">Data Analysis</span>
+        <span class="tech-tag">KPI Analysis</span>
+        <span class="tech-tag">Dashboard Analysis</span>
+        <span class="tech-tag">Data Visualization</span>
+        <span class="tech-tag">Financial Reporting</span>
+      </div>
     </div>
 
-    <div class="skill-group reveal">
-      <h3>Bahasa & Scripting</h3>
-      <div class="skill-row"><span class="skill-name">Golang</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">Unix / Shell</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-fill" style="width:40%"></div></div><span class="skill-pct">40%</span></div>
+    <div class="tech-group reveal">
+      <div class="tech-group-head">
+        <div class="tech-icon">🛠</div>
+        <h3>Tools</h3>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">Jira</span>
+        <span class="tech-tag">Figma</span>
+        <span class="tech-tag">Microsoft Excel</span>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Power Apps</span>
+        <span class="tech-tag">Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="tech-group reveal">
+      <div class="tech-group-head">
+        <div class="tech-icon">💻</div>
+        <h3>Technical</h3>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">SQL</span>
+        <!-- <span class="tech-tag">Python</span> -->
+      </div>
+    </div>
+
+    <div class="tech-group reveal">
+      <div class="tech-group-head">
+        <div class="tech-icon">🔄</div>
+        <h3>Process & Collaboration</h3>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">Agile</span>
+        <span class="tech-tag">Scrum</span>
+        <span class="tech-tag">UAT</span>
+        <span class="tech-tag">Stakeholder Management</span>
+        <span class="tech-tag">Documentation</span>
+        <span class="tech-tag">Cross-functional Collaboration</span>
+      </div>
     </div>
   </section>
 
   <section id="pendidikan">
-    <div class="sec-title">Pendidikan</div>
+    <div class="sec-title">Educations</div>
     <div class="reveal">
       <div class="edu-card">
         <div class="edu-icon">🎓</div>
@@ -502,13 +673,13 @@ A selection of projects showcasing my role, deliverables, and business impact as
 
 <footer id="kontak">
   <div class="wrap">
-    <div class="sec-title">Yuk Terhubung</div>
+    <div class="sec-title">Get in Touch</div>
     <div class="contact-grid">
       <a class="contact-card reveal" href="mailto:jeungdelin@gmail.com">
         <div class="lbl">Email</div>
         <div class="val">jeungdelin@gmail.com</div>
       </a>
-      <a class="contact-card reveal" href="tel:+6281935045410">
+      <a class="contact-card reveal" href="https://wa.me/6281935045410?utm_source=chatgpt.com">
         <div class="lbl">Phone</div>
         <div class="val">+62 819-3504-5410</div>
       </a>
